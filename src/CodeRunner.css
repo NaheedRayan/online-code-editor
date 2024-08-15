@@ -1,0 +1,143 @@
+/* Main container layout */
+.container {
+  display: flex;
+  height: calc(100vh - 60px);
+  width: 100%;
+  margin-top: 60px;
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-links li {
+  display: inline;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+/* Code editor section */
+.code-section {
+  flex: 1;
+  border-right: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Container for language selector and run button */
+.button-container {
+  border-top: 2px solid #000;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+/* Run button styles */
+.run-button {
+  padding: 5px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.run-button:hover {
+  background-color: #45a049;
+}
+
+.run-button:disabled {
+  background-color: #5c87fc;
+  cursor: not-allowed;
+}
+
+/* Output and input section */
+.output-input-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Output display area */
+.output {
+  flex: 1;
+  background-color: #272822;
+  color: #4aff13;
+  padding: 10px;
+  overflow-y: auto;
+ 
+  border-bottom: 2px solid #000;
+  font-family: monospace;
+}
+
+/* Input textarea */
+.stdin {
+  flex: 1;
+  background-color: #272822;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-top: 2px solid #000;
+  font-family: monospace;
+  font-size: 14px;
+  resize: none;
+}
+
+/* Language selector dropdown */
+select {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid #000;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .code-section {
+    border-right: none;
+    border-bottom: 2px solid #000;
+  }
+}
