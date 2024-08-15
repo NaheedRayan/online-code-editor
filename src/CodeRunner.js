@@ -7,7 +7,7 @@ import 'ace-builds/src-noconflict/mode-c_cpp';
 // Import theme
 import 'ace-builds/src-noconflict/theme-monokai';
 // Import autocompletion tools
-// import 'ace-builds/src-noconflict/ext-language_tools';
+import 'ace-builds/src-noconflict/ext-language_tools';
 
 import './CodeRunner.css';
 
@@ -36,8 +36,8 @@ const CodeEditor = ({ code, setCode, language }) => (
     height="calc(100% - 40px)"
     editorProps={{ $blockScrolling: true }}
     setOptions={{
-      // enableBasicAutocompletion: true,    // Enable basic autocompletion
-      // enableLiveAutocompletion: true,     // Enable live autocompletion
+      enableBasicAutocompletion: true,    // Enable basic autocompletion
+      enableLiveAutocompletion: true,     // Enable live autocompletion
       // enableSnippets: true,               // Enable code snippets
       showLineNumbers: true,              // Show line numbers
       tabSize: 4,                         // Set tab size
@@ -144,7 +144,7 @@ const CodeRunner = () => {
           switch (resultData.status) {
             case 'Queued':
             case 'Processing':
-              setOutput(`Status: ${resultData.status}. Checking again in 1 second...`)
+              setOutput(`Status: ${resultData.status}`)
               console.log(`Status: ${resultData.status}. Checking again in 1 second...`);
               setTimeout(pollResult, 1000); // Check again in 1 second
               break;
