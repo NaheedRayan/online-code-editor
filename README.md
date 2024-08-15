@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+Here's a README file for your React-based code runner project:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# Code Compiler
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+**Code Compiler** is a web-based code editor and compiler that allows users to write, edit, and execute code in multiple programming languages directly from their browser. The application is built using React and integrates the Ace Editor for a rich text-editing experience with syntax highlighting, customizable themes, and other features.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Multi-Language Support**: Supports Python, Java, and C/C++.
+- **Syntax Highlighting**: Provided by Ace Editor, with support for various programming languages.
+- **Customizable Editor**: Adjust font size, theme, and language mode.
+- **Code Execution**: Send code to a backend server to execute and return the results.
+- **Standard Input**: Accept user input for programs requiring stdin.
+- **Output Display**: Shows the output, errors, or status of the executed code.
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React**: For building the user interface.
+- **Ace Editor**: As the code editor with syntax highlighting and other advanced features.
+- **Fetch API**: To communicate with a backend server for code execution.
+- **CSS**: Custom styling for the application.
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/code-compiler.git
+   cd code-compiler
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Run the application:**
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+4. The application will be available at `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Write Code**: Use the code editor to write your code. Select the desired programming language from the dropdown menu.
+2. **Provide Input**: If your code requires standard input, enter it in the "Standard Input" field.
+3. **Run Code**: Click the "Run" button to execute your code. The output or any errors will be displayed in the "Output" section.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Configuration
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Ace Editor Options
+- **Themes**: The editor uses the "Monokai" theme by default, but this can be easily changed by importing a different theme from `ace-builds`.
+- **Language Modes**: Supports Python, Java, and C/C++. Additional languages can be added by importing the respective mode from `ace-builds`.
+- **Autocompletion**: Autocompletion is currently disabled but can be enabled by uncommenting the respective lines in the code.
 
-## Learn More
+### Backend Server
+The `runCode` function in `CodeRunner.js` sends the code to a backend server at `http://localhost:8080/submit`. You need to implement or configure this server to handle the code execution requests and return the results.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Polling for Results
+The application polls the backend server for the status of the execution and updates the output accordingly. This is particularly useful for long-running processes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## File Structure
 
-### Code Splitting
+- **src/components/CodeRunner.js**: Main React component for the code editor and runner.
+- **src/components/CodeRunner.css**: CSS styles for the components.
+- **src/App.js**: Main application file rendering the `CodeRunner` component.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing
 
-### Analyzing the Bundle Size
+Contributions are welcome! Feel free to submit a pull request or open an issue to discuss improvements or bugs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contact
 
-### Advanced Configuration
+For any inquiries, please reach out via [email@example.com](mailto:email@example.com).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to modify the README as per your specific needs!
