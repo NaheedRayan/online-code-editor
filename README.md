@@ -1,12 +1,11 @@
-Here's a README file for your React-based code runner project:
-
----
 
 # Code Compiler
 
 ## Overview
 
 **Code Compiler** is a web-based code editor and compiler that allows users to write, edit, and execute code in multiple programming languages directly from their browser. The application is built using React and integrates the Ace Editor for a rich text-editing experience with syntax highlighting, customizable themes, and other features.
+
+![ScreenShot](image.png)  
 
 ## Features
 
@@ -58,6 +57,9 @@ Here's a README file for your React-based code runner project:
 - **Autocompletion**: Autocompletion is currently disabled but can be enabled by uncommenting the respective lines in the code.
 
 ### Backend Server
+
+Check this repo if you need backend server : https://github.com/NaheedRayan/code-execution-engine
+
 The `runCode` function in `CodeRunner.js` sends the code to a backend server at `http://localhost:8080/submit`. You need to implement or configure this server to handle the code execution requests and return the results.
 
 ### Polling for Results
@@ -81,6 +83,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any inquiries, please reach out via [email@example.com](mailto:email@example.com).
 
----
-
-Feel free to modify the README as per your specific needs!
