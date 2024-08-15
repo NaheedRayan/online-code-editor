@@ -97,6 +97,15 @@ const CodeRunner = () => {
       'java': 'java'
     };
     
+
+    // custom polltime for different languages
+    const pollTimeMap = {
+      'c_cpp': 1000, // 1 sec
+      'python': 100, // 100ms
+      'java': 1000,  // 1 sec
+    };
+
+    var pollTime = pollTimeMap[language]
   
     // Payload for the POST request
     const payload = {
@@ -146,7 +155,7 @@ const CodeRunner = () => {
             case 'Processing':
               setOutput(`Status: ${resultData.status}`)
               console.log(`Status: ${resultData.status}. Checking again in 1 second...`);
-              setTimeout(pollResult, 1000); // Check again in 1 second
+              setTimeout(pollResult, pollTime); // Check again in 1 second
               break;
   
             case 'Runtime Error':
